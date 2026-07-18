@@ -1,5 +1,9 @@
 # AgentEval Studio
 
+[![CI](https://github.com/rishabhjha91/agent-eval-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/rishabhjha91/agent-eval-studio/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+
 A small **full-stack coding-agent evaluation tool**. It takes a saved agent
 trajectory for a repository task and scores it against a rubric - correctness
 (tests), scope control (only allowed files touched), grounding (no hallucinated
