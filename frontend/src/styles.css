@@ -1,0 +1,151 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #1c1c1c;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f9;
+}
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: #0f2b46;
+}
+
+.app__header p {
+  color: #4a5568;
+  margin: 4px 0 12px;
+}
+
+.app__header button {
+  padding: 8px 14px;
+  border: 1px solid #0f2b46;
+  background: #0f2b46;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.app__header button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.app__error {
+  color: #c0392b;
+  font-size: 14px;
+}
+
+.compare-panel__verdict {
+  display: inline-block;
+  margin: 8px 0 14px;
+  padding: 6px 12px;
+  background: #0f2b46;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.compare-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .compare-panel__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eval-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.eval-card--winner {
+  border-color: #1f8a4c;
+  box-shadow: 0 0 0 2px rgba(31, 138, 76, 0.18);
+}
+
+.eval-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.eval-card__header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.eval-card__overall {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f2b46;
+}
+
+.eval-card__tests {
+  color: #4a5568;
+  font-size: 14px;
+  margin: 4px 0 12px;
+}
+
+.score-bar {
+  margin-bottom: 10px;
+}
+
+.score-bar__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.score-bar__label {
+  text-transform: capitalize;
+  color: #2d3748;
+}
+
+.score-bar__track {
+  height: 8px;
+  background: #edf2f7;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.score-bar__fill {
+  height: 100%;
+}
+
+.score-bar__detail {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.eval-card__flag {
+  font-size: 13px;
+  color: #c0392b;
+  margin-top: 8px;
+}
+
+.eval-card__rationale {
+  font-size: 13px;
+  color: #2d3748;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+}

@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/sample.ts","./src/setuptests.ts","./src/types.ts","./src/vite-env.d.ts","./src/__tests__/comparepanel.test.tsx","./src/components/comparepanel.tsx","./src/components/evaluationcard.tsx","./src/components/scorebar.tsx"],"version":"5.9.3"}
