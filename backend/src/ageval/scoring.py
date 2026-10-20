@@ -33,9 +33,27 @@ EFFICIENCY_BASELINE_STEPS = 12
 
 
 def _path_allowed(path: str, allowed: list[str]) -> bool:
+    """Return whether a changed path matches an allowed path or prefix.
+
+    Directory prefixes must end at a path boundary. An explicit trailing
+    ``*`` retains the original behavior of matching any string prefix.
+    """
     if not allowed:
         return True
-    return any(path == a or path.startswith(a.rstrip("*")) for a in allowed)
+
+    for entry in allowed:
+        prefix = entry.rstrip("*")
+
+        if entry.endswith("*"):
+            if path.startswith(prefix):
+                return True
+        elif prefix.endswith("/"):
+            if path.startswith(prefix):
+                return True
+        elif path == prefix or path.startswith(prefix + "/"):
+            return True
+
+    return False
 
 
 def out_of_scope_files(task: Task, trajectory: Trajectory) -> list[str]:

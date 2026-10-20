@@ -41,3 +41,21 @@ def test_report_serialisation():
     html_out = to_html(rep)
     assert "AgentEval Studio" in html_out
     assert "Overall" in html_out
+
+
+def test_path_prefix_requires_directory_boundary():
+    assert scoring._path_allowed(
+        "src/pricing/calculator.py", ["src/pricing"]
+    )
+    assert not scoring._path_allowed(
+        "src/pricingx/evil.py", ["src/pricing"]
+    )
+
+
+def test_path_prefix_accepts_exact_path():
+    assert scoring._path_allowed("README.md", ["README.md"])
+    assert not scoring._path_allowed("README.md.bak", ["README.md"])
+
+
+def test_explicit_wildcard_matches_string_prefix():
+    assert scoring._path_allowed("src/pricingx/legacy.py", ["src/pricing*"])
